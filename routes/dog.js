@@ -5,4 +5,4 @@ async function displayRandomDog(){
     const object = document.getElementById("randomDog");
     object.innerHTML = `<img src="${data.message}">`;
 }
-module.exports = router;
+displayRandomDog();
