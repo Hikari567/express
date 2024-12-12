@@ -1,13 +1,18 @@
-var express = require('express');
-var router = express.Router();
-const request = require('request');
-router.get('/', async (req, res) => {
-request('https://api.thecatapi.com/v1/images/search', function (error, response,
-body) {
-if (!error && response.statusCode == 200) {
-const data = JSON.parse(body);
-res.json(data);
-}
-});
-})
-module.exports = router;
+const button = document.getElementById('click');
+    const type = document.getElementById('type');
+    const image = document.getElementById('image');
+    // ボタンをクリックしたらイベント発動
+    button.addEventListener('click', () => {
+        fetch('https://dog.ceo/api/breeds/image/random') // APIのURL
+        .then(response => {
+            return response.json();
+        })
+        .then(myJson => {
+            // imgタグに取得したURL画像を入れる
+            image.src = myJson['message'];
+            // 取得したURLをスラッシュ記号で分割し、犬種を表した要素を取得する
+            const breed = myJson['message'].split('/')[4];
+            type.innerText = breed;
+            button.innerText = 'わんわんお！'
+        });
+    });
