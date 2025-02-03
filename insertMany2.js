@@ -1,6 +1,6 @@
 const { MongoClient } = require("mongodb");
 // 下のURIをご自分の値に変更してください
-const uri = "mongodb+srv://matsunami2:password@test.zlsie9f.mongodb.net/?retryWrites=true&w=majority";
+const uri = "mongodb+srv://Hikari567:DwjeuYKyobn33Oaz@cluster0.hhdkg.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
 const client = new MongoClient(uri);
 async function run() {
 const database = client.db('notes');
